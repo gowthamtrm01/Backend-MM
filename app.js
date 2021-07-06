@@ -5,7 +5,10 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://gowtham:Saipallavi@0102@cluster0.wbk9z.mongodb.net/movieData',
+
+const url = process.env.MONGO_URL || "mongodb://localhost/movieData";
+
+mongoose.connect(url,
     { useNewUrlParser: true, useUnifiedTopology: true }
 )
 
